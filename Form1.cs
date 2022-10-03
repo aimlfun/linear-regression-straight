@@ -59,9 +59,10 @@ namespace Points
             height = pictureBoxCrosses.Height;
             width = pictureBoxCrosses.Width;
 
-            // the idea is to put a sea of green crosses, and have red crosses in a small part
-            GenerateRandomRedGreenCrosses();
+            // the idea is to put a line of green crosses, and have red crosses reflect as best as it can as a straight line
+            GenerateRandomGreenCrosses();
             
+            // input is directly connected to output
             int[] AIHiddenLayers = new int[] { 1, 1 }; 
 
             ActivationFunctions[] AIactivationFunctions = new ActivationFunctions[] { ActivationFunctions.TanH, ActivationFunctions.TanH,
@@ -75,11 +76,10 @@ namespace Points
         }
 
         /// <summary>
-        /// Fills pointsRedCrosses/pointsGreenCrosses with the location of the crosses (indicating 1/0)
+        /// Creates a wavy line of green crosses.
         /// </summary>
-        private void GenerateRandomRedGreenCrosses()
+        private void GenerateRandomGreenCrosses()
         {
-            // to compare if a point is in the "box" for red crosses, we need to order the top/left-bottom/right coordinates.
             int step;
 
             int y = height / 2;
@@ -147,7 +147,7 @@ namespace Points
         }
 
         /// <summary>
-        /// Train and plot
+        /// Train and plot.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -160,8 +160,6 @@ namespace Points
             int step = 6;
 
             Train();
-
-            // if (epoch % 100 != 0) return;
 
             pointsRedCross.Clear();
 
