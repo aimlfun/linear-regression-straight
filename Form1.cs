@@ -62,8 +62,7 @@ namespace Points
             // the idea is to put a sea of green crosses, and have red crosses in a small part
             GenerateRandomRedGreenCrosses();
             
-            int[] AIHiddenLayers = new int[] { 1, 10, 10, 10, 10, 10, 1 };
-            // or do this int[] AIHiddenLayers = new int[] { 1, pointsGreenCross.Count, pointsGreenCross.Count, pointsGreenCross.Count, 1 }; 
+            int[] AIHiddenLayers = new int[] { 1, 1 }; 
 
             ActivationFunctions[] AIactivationFunctions = new ActivationFunctions[] { ActivationFunctions.TanH, ActivationFunctions.TanH,
                                                                                       ActivationFunctions.TanH, ActivationFunctions.TanH,
